@@ -1,0 +1,14 @@
+#.gitignore 
+
+#Entorno 
+.venv/ 
+__pycache__/ 
+.pytest_cache/ 
+
+#Reportes 
+artifacts/ 
+allure-results/ 
+*.log 
+
+#Archivos sensibles 
+.env
