@@ -51,10 +51,24 @@ git log --oneline -n5 solo muestra las primero 5 lineas de los commits
 
 git remote add origin https://github.com/JBcampus/C_AUTOPYTHON
 
-git push
+git push -u origin alumno/dquintanilla
 
 git status
 git add .
 git commit -m "fix: cambio ... "
 git status
-git push
+git push -u origin alumno/dquintanilla
+
+git .m pip install pytest==8.3.4
+pytest --version
+pip lits  
+python -m venv .venv
+.venv\Scripts\activate.bat
+python -m pytest --version
+pip list
+pip install -r requierements.txt
+
+deactivate
+
+pytest ejecutar
+pytest -v ejecutar pero ver cada test
