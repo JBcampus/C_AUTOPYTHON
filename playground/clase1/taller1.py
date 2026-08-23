@@ -46,4 +46,3 @@ def build_user(username, password):
     } 
  
 user = build_user("standard_user", "secret_sauce") 
-print(user) 
