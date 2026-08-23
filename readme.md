@@ -50,3 +50,11 @@ git status
 git log --oneline -n5 solo muestra las primero 5 lineas de los commits
 
 git remote add origin https://github.com/JBcampus/C_AUTOPYTHON
+
+git push
+
+git status
+git add .
+git commit -m "fix: cambio ... "
+git status
+git push
