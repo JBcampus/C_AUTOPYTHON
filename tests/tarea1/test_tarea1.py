@@ -35,7 +35,7 @@ def test_casos_registro_fixture(casos_registro):
         resultado = validar_registro(caso["correo"], caso["clave"], caso["confirmacion"])
         assert resultado == caso["mensaje"]
 
-@pytest.mark.smoke
+@pytest.mark.regression
 def test_generar_correo_smoke():
     resultado = generar_correo("admin", "adelina")
     print(resultado)
