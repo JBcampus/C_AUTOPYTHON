@@ -82,3 +82,9 @@ pytest test/clase3/test_navegacion_basica.py
 pytest tests/clase3/test_saucedemo_login.py -v
 pytest tests/clase3/test_saucedemo_login.py -m smoke -v
 pytest tests/clase3/test_saucedemo_login.py -k login -v
+
+## taller 4 comandos
+
+pytest test/clase4/bdd --gherkin-terminal-reporter -vv
+
+pip freeze > requirements.txt
