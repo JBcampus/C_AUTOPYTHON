@@ -88,3 +88,7 @@ pytest tests/clase3/test_saucedemo_login.py -k login -v
 pytest test/clase4/bdd --gherkin-terminal-reporter -vv
 
 pip freeze > requirements.txt
+
+## instalar
+
+pip install pytest-bdd
