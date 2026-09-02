@@ -72,3 +72,13 @@ deactivate
 
 pytest ejecutar
 pytest -v ejecutar pero ver cada test
+
+## ejecutar solo el test en especifico:
+
+pytest test/clase3/test_navegacion_basica.py
+
+## taller tres comandos
+
+pytest tests/clase3/test_saucedemo_login.py -v
+pytest tests/clase3/test_saucedemo_login.py -m smoke -v
+pytest tests/clase3/test_saucedemo_login.py -k login -v
