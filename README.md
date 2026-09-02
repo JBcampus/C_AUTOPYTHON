@@ -26,3 +26,6 @@ pytest -m smoke -v #ejecutar test con markador Smoke
 pytest tests/clase3/test_saucedemo_login.py::test_login_saucedemo_correcto -v #ejecutar test especifico en un archivo
 pytest tests/clase2/test_fixtures_marcadores.py::test_critical_carrito -v #ejecutar test especifico en un archivo
 pytest -k "login" -v #ejecutar test que contengan nombre "login"
+pytest tests/tarea2/test_saucedemo_compra.py -v
+python -m pytest tests/clase5/test_login_pom.py -v
+python -m pytest tests/clase5/test_login_scope_class.py -v
