@@ -4,8 +4,7 @@ from pages.base_page import BasePage
 class ProductsPage(BasePage):
     """Mapea los elementos de la página de productos filtrados por la marca Polo."""
 
-    
-    # Localizador enfocado directamente en el primer botón interactuable del grid
+        # Localizador enfocado directamente en el primer botón interactuable del grid
     FIRST_ADD_TO_CART_BTN = (By.CSS_SELECTOR, ".features_items .col-sm-4 .productinfo .add-to-cart")
 
     MODAL_POPUP = (By.CLASS_NAME, "modal-content")

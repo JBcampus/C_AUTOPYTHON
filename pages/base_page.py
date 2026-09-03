@@ -7,7 +7,6 @@ class BasePage:
 
     def __init__(self, driver):
         """Inicializa la página base con tu driver de Edge.
-
         Args:
             driver: Instancia de Microsoft Edge heredada del fixture.
         """
