@@ -1,0 +1,42 @@
+{
+  "usuarios_validos": [
+    {
+      "caso": "login_valido_standard_user",
+      "user": "standard_user",
+      "pass": "secret_sauce",
+      "resultado_esperado": "Products"
+    },
+    {
+      "caso": "login_valido_problem_user",
+      "user": "problem_user",
+      "pass": "secret_sauce",
+      "resultado_esperado": "Products"
+    },
+    {
+      "caso": "login_valido_performance_glitch_user",
+      "user": "performance_glitch_user",
+      "pass": "secret_sauce",
+      "resultado_esperado": "Products"
+    }
+  ],
+  "usuarios_invalidos": [
+    {
+      "caso": "login_clave_incorrecta",
+      "user": "standard_user",
+      "pass": "clave_incorrecta",
+      "mensaje_esperado": "Username and password do not match"
+    },
+    {
+      "caso": "login_usuario_bloqueado",
+      "user": "locked_out_user",
+      "pass": "secret_sauce",
+      "mensaje_esperado": "locked out"
+    },
+    {
+      "caso": "login_usuario_vacio",
+      "user": "",
+      "pass": "secret_sauce",
+      "mensaje_esperado": "Username is required"
+    }
+  ]
+}
