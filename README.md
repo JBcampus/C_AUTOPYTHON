@@ -30,3 +30,11 @@ pytest tests/clase6/test_helpers_basicos.py --cov=helpers --cov=pages --cov-repo
 
 -Levantar reporte de cobertura html
 start coverage-report/index.html
+
+## Comandos Tarea3
+-Comando ejecución de cobertura de proyecto
+pytest tests/tarea3/test_suite1.py --cov=helpers --cov=pages --cov-report=term-missing --cov-report=html:coverage-report
+
+-Levantar reporte de cobertura html
+start coverage-report/index.html
+
