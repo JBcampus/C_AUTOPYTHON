@@ -1,0 +1,10 @@
+{
+  "usuarios_validos": [
+    {
+      "caso": "login_valido_standard_user",
+      "user": "standard_user",
+      "pass": "secret_sauce",
+      "resultado_esperado": "inventory.html"
+    }
+  ]
+}
