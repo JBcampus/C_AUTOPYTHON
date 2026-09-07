@@ -3,10 +3,17 @@ from selenium import webdriver
  
 from pages.clase5.login_page import LoginPage 
 from pages.clase5.inventory_page import InventoryPage 
+<<<<<<< HEAD
 from pages.clase5.alerts_page import AlertsPage 
 from pages.clase5.upload_page import UploadPage 
  
 @pytest.fixture(scope="module")
+=======
+# from pages.clase5.alerts_page import AlertsPage 
+# from pages.clase5.upload_page import UploadPage 
+ 
+@pytest.fixture 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
 def driver(): 
     navegador = webdriver.Edge() 
     navegador.maximize_window() 
@@ -40,6 +47,7 @@ def login_page_class(driver_class):
 def inventory_page_class(driver_class): 
     return InventoryPage(driver_class) 
  
+<<<<<<< HEAD
 @pytest.fixture 
 def alerts_page(driver): 
     return AlertsPage(driver) 
@@ -47,3 +55,12 @@ def alerts_page(driver):
 @pytest.fixture 
 def upload_page(driver): 
     return UploadPage(driver)
+=======
+# @pytest.fixture 
+# def alerts_page(driver): 
+#     return AlertsPage(driver) 
+ 
+# @pytest.fixture 
+# def upload_page(driver): 
+#     return UploadPage(driver)
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a

@@ -21,4 +21,8 @@ class InventoryPage:
  
     def obtener_cantidad_carrito(self): 
         badge = self.wait.until(EC.visibility_of_element_located(self.SHOPPING_CART_BADGE)) 
+<<<<<<< HEAD
         return badge.text
+=======
+        return badge.text 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a

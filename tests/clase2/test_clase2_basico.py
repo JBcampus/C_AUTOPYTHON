@@ -36,4 +36,8 @@ def test_agregar_producto_al_carrito():
     carrito_actualizado = agregar_al_carrito(carrito, "Laptop Lenovo") 
  
     assert len(carrito_actualizado) == 1 
+<<<<<<< HEAD
     assert obtener_mensaje_carrito(carrito_actualizado) == "El carrito tiene 1 producto"
+=======
+    assert obtener_mensaje_carrito(carrito_actualizado) == "El carrito tiene 1 producto" 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a

@@ -51,14 +51,23 @@ def archivo_evidencia():
     nombre_archivo = "evidencia_login.txt" 
  
     archivo = open(nombre_archivo, "w", encoding="utf8") 
+<<<<<<< HEAD
  
+=======
+    
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
     archivo.write("Evidencia simulada de prueba de login") 
     archivo.close() 
  
     yield nombre_archivo 
  
+<<<<<<< HEAD
     if os.path.exists(nombre_archivo): 
         os.remove(nombre_archivo) 
+=======
+    #if os.path.exists(nombre_archivo): 
+    #    os.remove(nombre_archivo) 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
  
 def test_archivo_evidencia_se_crea(archivo_evidencia): 
     assert os.path.exists(archivo_evidencia) is True 

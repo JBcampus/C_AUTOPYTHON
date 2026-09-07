@@ -2,6 +2,12 @@ import pytest
  
 @pytest.mark.regression 
 class TestSauceDemoConScopeClass: 
+<<<<<<< HEAD
+=======
+
+#por cada test se usa la misma clase porque tiene "Scope=Class"
+#y eso se refleja en que el navegador no se cierra y vuelve abrir , porque solo se invoca la clase 1 sola vez.
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
  
     def test_login_muestra_inventario(self, login_page_class, inventory_page_class): 
         login_page_class.abrir() 

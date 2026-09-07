@@ -37,7 +37,11 @@ def test_login_usuario_bloqueado_con_evidencia_si_falla(driver):
             EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-test='error']")) 
         ) 
  
+<<<<<<< HEAD
         assert "locked out" in mensaje_error.text 
+=======
+        assert "locked_out" in mensaje_error.text 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
  
     except Exception: 
         # Definición de carpeta, crea si no existe 
@@ -50,8 +54,13 @@ def test_login_usuario_bloqueado_con_evidencia_si_falla(driver):
         ruta_evidencia = carpeta_evidencias / f"fallo_login_{fecha}.png" 
 
         # Captura de evidencia de fallo 
+<<<<<<< HEAD
         driver.save_screenshot(str(ruta_evidencia))
         print(driver.current_url) 
+=======
+        driver.save_screenshot(str(ruta_evidencia)) 
+        print(driver.current_url)
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
         print(f"Evidencia guardada en: {ruta_evidencia}") 
         raise 
     

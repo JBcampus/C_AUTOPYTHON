@@ -42,6 +42,7 @@ def test_login_correcto_con_esperas(driver):
     boton_login.click() 
  
     # Esperar hasta que el elemento exista y sea visible 
+<<<<<<< HEAD
     titulo_productos = wait.until( 
         EC.visibility_of_element_located((By.CLASS_NAME, "title")) 
     ) 
@@ -50,3 +51,10 @@ def test_login_correcto_con_esperas(driver):
     assert titulo_productos.text == "Products" 
     assert "inventory.html" in driver.current_url
      
+=======
+    titulo_productos = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "title"))) 
+ 
+    # Validaciones finales 
+    assert titulo_productos.text == "Products" 
+    assert "inventory.html" in driver.current_url 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a

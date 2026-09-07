@@ -4,11 +4,19 @@ from selenium.webdriver.support import expected_conditions as EC
  
 class LoginPage: 
     URL = "https://www.saucedemo.com/" 
+<<<<<<< HEAD
  
     USERNAME_INPUT = (By.ID, "user-name")
     PASSWORD_INPUT = (By.ID, "password") 
     LOGIN_BUTTON = (By.ID, "login-button") 
     ERROR_MESSAGE = (By.CSS_SELECTOR, "[data-test='error']")
+=======
+    
+    #Se crear como tipo "TUPLA" , empaquetado con parentesis para en los DEF sea mas facil manipularlos
+    USERNAME_INPUT = (By.ID, "user-name") 
+    PASSWORD_INPUT = (By.ID, "password") 
+    LOGIN_BUTTON = (By.ID, "login-button") 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
  
     def __init__(self, driver): 
         self.driver = driver 
@@ -19,6 +27,10 @@ class LoginPage:
  
     def escribir_usuario(self, usuario): 
         #campo_usuario = self.wait.until(EC.visibility_of_element_located(self.USERNAME_INPUT)) 
+<<<<<<< HEAD
+=======
+        #otra forma de usar las TUPLAS
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
         campo_usuario = self.driver.find_element(*self.USERNAME_INPUT)
         campo_usuario.send_keys(usuario) 
  
@@ -33,8 +45,12 @@ class LoginPage:
     def iniciar_sesion(self, usuario, clave): 
         self.escribir_usuario(usuario) 
         self.escribir_clave(clave) 
+<<<<<<< HEAD
         self.click_login() 
 
     def obtener_mensaje_error(self):
         mensaje_error = self.driver.find_element(*self.ERROR_MESSAGE)
         return mensaje_error.text
+=======
+        self.click_login() 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a

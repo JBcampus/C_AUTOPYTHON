@@ -40,4 +40,8 @@ def obtener_mensaje_carrito(carrito):
     if len(carrito) == 1: 
         return "El carrito tiene 1 producto" 
  
+<<<<<<< HEAD
     return f"El carrito tiene {len(carrito)} productos"
+=======
+    return f"El carrito tiene {len(carrito)} productos" 
+>>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
