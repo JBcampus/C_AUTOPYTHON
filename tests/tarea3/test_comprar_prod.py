@@ -56,7 +56,7 @@ def test_agregar_producto(inventory_page, caso_agregar_producto, login_page):
     logger.info(f"Finalizar la compra")
 
     assert textos_son_iguales(inventory_page.obtener_titulo(), "Checkout: Complete!")
-    logger.info(f"Validamos")
+    logger.info(f"Validamos que la compra se ha realizado correctamente")
 
 
 
