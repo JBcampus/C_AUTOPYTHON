@@ -22,17 +22,16 @@ user = {
  
 print(user["username"]) 
 print(user["password"]) 
- 
+
 #Condicionales 
 expected = "locked" 
- 
 if expected == "success": 
     print("El usuario debe ingresar correctamente") 
-elif expected == "locked": 
+elif expected == "locked":
     print("El sistema debe mostrar usuario bloqueado") 
 else: 
     print("El sistema debe mostrar error de credenciales") 
- 
+
 #Ciclos 
 for user in users: 
     print(f"Usuario disponible: {user}") 
