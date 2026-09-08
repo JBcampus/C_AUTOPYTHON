@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC 
@@ -9,7 +10,8 @@ class LoginPage:
     PASSWORD_INPUT = (By.ID, "password") 
     LOGIN_BUTTON = (By.ID, "login-button") 
     ERROR_MESSAGE = (By.CSS_SELECTOR, "[data-test='error']")
- 
+
+    @allure.step("Abrir página de login")
     def __init__(self, driver): 
         self.driver = driver 
         self.wait = WebDriverWait(driver, 10) 
@@ -29,12 +31,14 @@ class LoginPage:
     def click_login(self): 
         boton_login = self.wait.until(EC.element_to_be_clickable(self.LOGIN_BUTTON)) 
         boton_login.click() 
- 
+
+    @allure.step("Proceso de login")
     def iniciar_sesion(self, usuario, clave): 
         self.escribir_usuario(usuario) 
         self.escribir_clave(clave) 
         self.click_login() 
 
+    @allure.step("Obtener mensaje de error")
     def obtener_mensaje_error(self):
         mensaje_error = self.driver.find_element(*self.ERROR_MESSAGE)
         return mensaje_error.text
