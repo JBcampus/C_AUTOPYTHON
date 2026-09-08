@@ -2,7 +2,7 @@ import json
 import logging
 import pytest
 from helpers.screenshot_helper import guardar_captura
-from helpers.integrador.webdriver_helper import WebDriverHelper  
+from helpers.tarea3.webdriver_helper import WebDriverHelper
 from pages.tarea3.login_page import LoginPage
 from pages.tarea3.inventory_page import InventoryPage
 from pages.tarea3.checkout_page import CheckoutPage
