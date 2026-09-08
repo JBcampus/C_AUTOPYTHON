@@ -27,7 +27,7 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Run E2E tests with Allure results
         run: |
-          python -m pytest ${TEST_EXCECUTION_DIR} -n auto --alluredir=${ALLURE_RESULTS_DIR} --clean-alluredir
+          python -m pytest ${TEST_EXCECUTION_DIR} -n 2 --alluredir=${ALLURE_RESULTS_DIR} --clean-alluredir
 
       - name: Upload Allure raw results
         if: always()
