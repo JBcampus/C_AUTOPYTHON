@@ -7,7 +7,8 @@ __pycache__/
 #Reportes 
 artifacts/ 
 allure-results/ 
-*.log 
+*.log
+reports/ 
 
 #Archivos sensibles 
 .env

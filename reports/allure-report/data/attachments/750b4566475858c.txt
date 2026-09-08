@@ -1,4 +1,0 @@
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:33 Ejecutando caso inválido: login_usuario_bloqueado
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:36 Página de login abierta
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:39 Login ejecutado con usuario: locked_out_user
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:42 Mensaje de error obtenido: Epic sadface: Sorry, this user has been locked out.

@@ -1,7 +1,0 @@
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:33 Ejecutando caso inválido: login_usuario_vacio
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:36 Página de login abierta
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:39 Login ejecutado con usuario: 
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:42 Mensaje de error obtenido: Epic sadface: Username is required
-[1m[31mERROR   [0m test_login_data_driven:test_login_data_driven.py:56 Prueba fallida. Captura guardada en: artifacts\fallo_login_usuario_vacio_20260907_220229.png
-[1m[31mERROR   [0m test_login_data_driven:test_login_data_driven.py:57 assert False
- +  where False = contiene_texto('Epic sadface: Username is required', 'Username is required..')

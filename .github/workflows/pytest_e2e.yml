@@ -10,7 +10,7 @@ jobs:
 
     env:
       ALLURE_RESULTS_DIR: allure-results
-      TEST_EXCECUTION_DIR: tests/clase6/test_login_data_driven.py::test_login_invalido_data_driven
+      TEST_EXCECUTION_DIR: tests/integrador/test_suite1.py::test_suite1_autentificacion_y_compra
 
     steps:
       - name: Checkout repository

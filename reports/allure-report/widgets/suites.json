@@ -1,1 +1,1 @@
-{"total":2,"items":[{"uid":"9f113ed5c2915da4557af1b9e85fe2e1","name":"tests.clase6","statistic":{"failed":1,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":4}},{"uid":"5da20b3fd24fe7cea666faacdf8b06b5","name":"tests.clase5","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
+{"total":1,"items":[{"uid":"e8eed2226ae6462481d0a75f26a5a564","name":"tests.integrador","statistic":{"failed":1,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":4}}]}

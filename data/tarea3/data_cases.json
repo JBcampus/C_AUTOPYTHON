@@ -20,6 +20,13 @@
       "indice_producto": 2,
       "producto_esperado": "Sauce Labs Bolt T-Shirt",
       "cantidad_esperada": "1"
+    },
+    {
+      "caso": "orden_za_agregar_segundo_producto",
+      "orden": "za",
+      "indice_producto": 1,
+      "producto_esperado": "Sauce Labs Onesie..",
+      "cantidad_esperada": "1"
     }
   ]
 }
