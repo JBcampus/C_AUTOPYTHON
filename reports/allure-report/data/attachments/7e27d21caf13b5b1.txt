@@ -1,0 +1,8 @@
+[33mWARNING [0m selenium.webdriver.common.selenium_manager:selenium_manager.py:163 The msedgedriver version (151.0.4129.107) detected in PATH at C:\SeleniumDrivers\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (152.0.4191.66); currently, msedgedriver 152.0.4191.66 is recommended for MicrosoftEdge 152.*, so it is advised to delete the driver in PATH and retry
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:34 Ejecutando caso inválido: login_usuario_vacio
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:37 Página de login abierta
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:40 Login ejecutado con usuario: 
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:43 Mensaje de error obtenido: Epic sadface: Username is required
+[1m[31mERROR   [0m test_login_data_driven:test_login_data_driven.py:56 Prueba fallida. Captura guardada en: artifacts\fallo_login_usuario_vacio_20260907_220202.png
+[1m[31mERROR   [0m test_login_data_driven:test_login_data_driven.py:57 assert False
+ +  where False = contiene_texto('Epic sadface: Username is required', 'Username is required.')
