@@ -1,0 +1,4 @@
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:44 Ejecutando caso inválido: login_clave_incorrecta
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:47 Página de login abierta
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:54 Login ejecutado con usuario: standard_user
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:58 Mensaje de error obtenido: Epic sadface: Username and password do not match any user in this service

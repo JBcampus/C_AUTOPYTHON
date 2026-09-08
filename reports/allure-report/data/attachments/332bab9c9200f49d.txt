@@ -1,0 +1,7 @@
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:44 Ejecutando caso inválido: login_clave_incorrecta
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:47 Página de login abierta
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:54 Login ejecutado con usuario: standard_user
+[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:58 Mensaje de error obtenido: Epic sadface: Username is required
+[31m[1mERROR   [0m test_login_data_driven:test_login_data_driven.py:71 Prueba fallida. Captura guardada en: artifacts\clase5\fallo_login_clave_incorrecta_20260907_220124.png
+[31m[1mERROR   [0m test_login_data_driven:test_login_data_driven.py:72 assert False
+ +  where False = contiene_texto('Epic sadface: Username is required', 'Username and password do not match')

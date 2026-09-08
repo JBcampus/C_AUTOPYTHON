@@ -1,5 +1,7 @@
 import pytest
 import logging
+import allure
+
 from helpers.data_helper import leer_json
 from helpers.screenshot_helper import guardar_captura
 from helpers.text_helper import contiene_texto, textos_son_iguales
@@ -34,9 +36,7 @@ def test_login_valido_data_driven(login_page, inventory_page, caso_login):
     assert textos_son_iguales(titulo, caso_login["resultado_esperado"])
 
 @pytest.mark.data
-@pytest.mark.parametrize(
-    "caso_login",
-    datos_login["usuarios_invalidos"],
+@pytest.mark.parametrize("caso_login", datos_login["usuarios_invalidos"],
     ids=[caso["caso"] for caso in datos_login["usuarios_invalidos"]]
 )
 
@@ -57,16 +57,18 @@ def test_login_invalido_data_driven(driver, login_page, caso_login):
 
         logger.info(f"Mensaje de error obtenido: {mensaje_error}")
 
-        assert contiene_texto(
-            mensaje_error,
-            caso_login["mensaje_esperado"]
-        )
-    except Exception:
-        ruta_captura = guardar_captura(
-            driver,
-            f"fallo_{caso_login['caso']}"
-        )
+        assert contiene_texto(mensaje_error, caso_login["mensaje_esperado"])
+    except Exception as e:
+        ruta_captura = guardar_captura(driver,f"fallo_{caso_login['caso']}")
+
+        with allure.step("Capturando evidencia en allure"):
+            allure.attach(
+            driver.get_screenshot_as_png(),
+            name="Error identificado",
+            attachment_type=allure.attachment_type.PNG
+            )
 
         logger.error(f"Prueba fallida. Captura guardada en: {ruta_captura}")
+        logger.error(e)
 
-        raise
+        raise e
