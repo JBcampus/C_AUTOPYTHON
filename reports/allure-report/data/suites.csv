@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","796","test_login_invalido_data_driven[login_usuario_vacio]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
+"","672","Login válido con evidencia","tests.clase5","2026-09-07","passed","2026-09-07","","Pruebas UI","",""
+"","881","test_login_invalido_data_driven[login_usuario_bloqueado_]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
+"","805","test_login_invalido_data_driven[login_clave_incorrecta]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
+"","1156","test_login_invalido_data_driven[login_usuario_bloqueado]","tests.clase6","2026-09-07","failed","2026-09-07","","test_login_data_driven","",""
+"","721","test_login_invalido_data_driven[login_usuario_bloqueado]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
+"","764","Agregar producto al carrito de compra","tests.clase5","2026-09-07","passed","2026-09-07","","Pruebas UI","",""
