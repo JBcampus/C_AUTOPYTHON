@@ -11,7 +11,7 @@ from helpers.tarea3.webdriver_helper import WebDriverHelper
 logger = logging.getLogger(__name__)
 
 def cargar_casos_prueba():
-    ruta_json = os.path.join("data", "tarea3", "Data_cases.json")
+    ruta_json = os.path.join("data", "tarea3", "data_cases.json")
     with open(ruta_json, "r", encoding="utf-8") as file:
         return json.load(file)
 
