@@ -1,7 +1,39 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","988","test_login_invalido_data_driven[login_usuario_vacio]","tests.clase6","2026-09-07","failed","2026-09-07","","test_login_data_driven","",""
-"","994","test_login_invalido_data_driven[login_usuario_bloqueado]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
-"","897","test_login_invalido_data_driven[login_clave_incorrecta]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
-"","615","Login válido con evidencia","tests.clase5","2026-09-07","passed","2026-09-07","","Pruebas UI","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","958","test_suite_autenticacion_y_estado[order_hilo_agregar_primer_producto]","tests.integrador","2026-09-09","failed","2026-09-09","","test_suite_integrador","",""
+"
+    Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+    Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+    ","0","test_suite_autenticacion_y_estado[NOTSET]","tests.integrador","2026-09-08","skipped","2026-09-08","","test_suite_integrador","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","891","test_suite_autenticacion_y_estado[order_hilo_agregar_primer_producto]","tests.integrador","2026-09-09","passed","2026-09-09","","test_suite_integrador","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","869","test_suite_autenticacion_y_estado[caso_forzar_error_integrador]","tests.integrador","2026-09-09","failed","2026-09-09","","test_suite_integrador","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","1040","test_suite_autenticacion_y_estado[order_hilo_agregar_primer_producto]","tests.integrador","2026-09-09","failed","2026-09-09","","test_suite_integrador","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","1016","test_suite_autenticacion_y_estado[order_lohi_agregar_primer_producto]","tests.integrador","2026-09-09","failed","2026-09-09","","test_suite_integrador","",""
 "","1030","test_login_invalido_data_driven[login_usuario_vacio]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
+"","994","test_login_invalido_data_driven[login_usuario_bloqueado]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
 "","299","Agregar producto al carrito de compra","tests.clase5","2026-09-07","passed","2026-09-07","","Pruebas UI","",""
+"","897","test_login_invalido_data_driven[login_clave_incorrecta]","tests.clase6","2026-09-07","passed","2026-09-07","","test_login_data_driven","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","939","test_suite_autenticacion_y_estado[order_lohi_agregar_primer_producto]","tests.integrador","2026-09-09","passed","2026-09-09","","test_suite_integrador","",""
+"","615","Login válido con evidencia","tests.clase5","2026-09-07","passed","2026-09-07","","Pruebas UI","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","839","test_suite_autenticacion_y_estado[order_az_agregar_tercer_producto]","tests.integrador","2026-09-09","passed","2026-09-09","","test_suite_integrador","",""
+"","988","test_login_invalido_data_driven[login_usuario_vacio]","tests.clase6","2026-09-07","failed","2026-09-07","","test_login_data_driven","",""

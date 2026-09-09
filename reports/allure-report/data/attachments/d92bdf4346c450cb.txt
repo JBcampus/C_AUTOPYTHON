@@ -1,0 +1,3 @@
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:81 === INICIANDO CASO DATA DRIVEN: caso_forzar_error_integrador ===
+[31m[1mERROR   [0m test_suite_integrador:test_suite_integrador.py:93 Excepción capturada de forma controlada en [caso_forzar_error_integrador]: 'LoginPage' object has no attribute 'navegar_a_la_url'
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:102 Evidencia guardada localmente en: artifacts\fallo_caso_forzar_error_integrador.png

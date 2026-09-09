@@ -1,0 +1,5 @@
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:81 === INICIANDO CASO DATA DRIVEN: caso_forzar_error_integrador ===
+[32mINFO    [0m pages.tarea3.login_page:login_page.py:19 Navegando a la URL: https://www.saucedemo.com/
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:36 Página de login cargada exitosamente.
+[1m[31mERROR   [0m test_suite_integrador:test_suite_integrador.py:93 Excepción capturada de forma controlada en [caso_forzar_error_integrador]: 'LoginPage' object has no attribute 'autenticar'
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:102 Evidencia guardada localmente en: artifacts\fallo_caso_forzar_error_integrador.png

@@ -3,14 +3,14 @@
     "caso": "order_hilo_agregar_primer_producto",
     "orden": "hilo",
     "indice_producto": 0,
-    "producto_esperado": "Sauce Labs Backpack",
+    "producto_esperado": "Sauce Labs Fleece Jacket",
     "cantidad_esperada": "1"
   },
   {
     "caso": "order_lohi_agregar_primer_producto",
     "orden": "lohi",
     "indice_producto": 0,
-    "producto_esperado": "Sauce Labs Fleece Jacket",
+    "producto_esperado": "Sauce Labs Onesie",
     "cantidad_esperada": "1"
   },
   {

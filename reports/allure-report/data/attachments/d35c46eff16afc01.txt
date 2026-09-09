@@ -1,0 +1,17 @@
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:85 === INICIANDO CASO DATA DRIVEN: order_hilo_agregar_primer_producto ===
+[32mINFO    [0m pages.tarea3.login_page:login_page.py:19 Navegando a la URL: https://www.saucedemo.com/
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:36 Página de login cargada exitosamente.
+[32mINFO    [0m pages.tarea3.login_page:login_page.py:24 Intentando autenticar al usuario estándar: standard_user
+[32mINFO    [0m pages.tarea3.login_page:login_page.py:37 Presionando el botón de inicio de sesión.
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:42 Intento de autenticación ejecutado para el usuario: standard_user
+[32mINFO    [0m pages.tarea3.inventory_page:inventory_page.py:21 Cambiando filtro de ordenamiento a: hilo
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:50 Filtro de ordenamiento por 'hilo' aplicado correctamente.
+[32mINFO    [0m pages.tarea3.inventory_page:inventory_page.py:39 Intentando añadir producto en el índice de lista: 0
+[32mINFO    [0m pages.tarea3.inventory_page:inventory_page.py:50 Producto en índice 0 añadido correctamente.
+[32mINFO    [0m pages.tarea3.inventory_page:inventory_page.py:63 Navegando hacia la pantalla del carrito.
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:56 Producto con índice 0 agregado. Redireccionando a la cesta.
+[32mINFO    [0m pages.tarea3.checkout_page:checkout_page.py:23 Validando el nombre del producto dentro del carrito.
+[1m[31mERROR   [0m test_suite_integrador:test_suite_integrador.py:97 Excepción capturada de forma controlada en [order_hilo_agregar_primer_producto]: Error: Se esperaba 'Sauce Labs Fleecy Jacket' pero se obtuvo 'Sauce Labs Fleece Jacket'
+assert ('Sauce Labs Fleecy Jacket' in 'Sauce Labs Fleece Jacket' or 'Sauce Labs Fleece Jacket' == True)
+ +  where 'Sauce Labs Fleece Jacket' = str('Sauce Labs Fleece Jacket')
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:106 Evidencia guardada localmente en: artifacts\fallo_order_hilo_agregar_primer_producto.png

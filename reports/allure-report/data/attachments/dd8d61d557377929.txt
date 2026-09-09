@@ -1,0 +1,3 @@
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:81 === INICIANDO CASO DATA DRIVEN: order_hilo_agregar_primer_producto ===
+[31m[1mERROR   [0m test_suite_integrador:test_suite_integrador.py:93 Excepción capturada de forma controlada en [order_hilo_agregar_primer_producto]: 'LoginPage' object has no attribute 'navegar_a_la_url'
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:102 Evidencia guardada localmente en: artifacts\fallo_order_hilo_agregar_primer_producto.png

@@ -1,0 +1,5 @@
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:80 === INICIANDO CASO DATA DRIVEN: order_lohi_agregar_primer_producto ===
+[32mINFO    [0m pages.tarea3.login_page:login_page.py:19 Navegando a la URL: https://www.saucedemo.com/
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:36 Página de login cargada exitosamente.
+[31m[1mERROR   [0m test_suite_integrador:test_suite_integrador.py:92 Excepción capturada de forma controlada en [order_lohi_agregar_primer_producto]: 'LoginPage' object has no attribute 'iniciar_sesion'
+[32mINFO    [0m test_suite_integrador:test_suite_integrador.py:101 Evidencia guardada localmente en: artifacts\fallo_order_lohi_agregar_primer_producto.png
