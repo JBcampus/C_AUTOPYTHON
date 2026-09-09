@@ -20,6 +20,13 @@
       "indice_producto": 2,
       "producto_esperado": "Sauce Labs Bolt T-Shirt",
       "cantidad_esperada": "1"
-    }
+    },
+    {
+      "caso": "caso_forzar_error_integrador",
+      "orden": "za",
+      "indice_producto": 0,
+      "producto_esperado": "PRODUCTO_FANTASMA_ERROR",
+      "cantidad_esperada": "1"
+  }
   ]
 }

@@ -1,4 +1,4 @@
-name: E2E Pytest Selenium Allure
+name: E2E Pytest Selenium Allure - Integrador
 
 on:
   push:
@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ALLURE_RESULTS_DIR: allure-results
-      TEST_EXCECUTION_DIR: tests/clase6/test_login_data_driven.py::test_login_invalido_data_driven
+      ALLURE_RESULTS_DIR: reports/allure-results
+      TEST_EXCECUTION_DIR: tests/integrador/test_suite_integrador.py
 
     steps:
       - name: Checkout repository
@@ -25,27 +25,29 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
-      - name: Run E2E tests with Allure results
+          # Aseguramos las dependencias mandatorias solicitadas por el taller y el integrador
+          python -m pip install pytest-xdist pytest-cov allure-pytest
+      - name: Run E2E tests with Allure, Coverage and 2 Workers
         run: |
-          python -m pytest ${TEST_EXCECUTION_DIR} -n auto --alluredir=${ALLURE_RESULTS_DIR} --clean-alluredir
+          python -m pytest ${TEST_EXECUTION_DIR} -n 2 --cov=helpers/tarea3 --cov=pages/tarea3 --cov-report=term-missing --cov-report=html:coverage-report --alluredir=${ALLURE_RESULTS_DIR} --clean-alluredir
 
       - name: Upload Allure raw results
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: allure-results/
+          path: reports/allure-results/
 
-      - name: Upload logs
+      - name: Upload coverage report
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
-          name: logs
-          path: logs/
+          name: coverage-report
+          path: coverage-report/
 
-      - name: Upload evidencias
+      - name: Upload evidencias (Artifacts)
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: evidencias
           path: artifacts/
