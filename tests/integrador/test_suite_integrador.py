@@ -1,108 +1,109 @@
-import pytest
-import allure
-import os
-import logging
 import json
+import logging
+import pytest
+from helpers.screenshot_helper import guardar_captura
+from helpers.tarea3.webdriver_helper import WebDriverHelper
 from pages.tarea3.login_page import LoginPage
 from pages.tarea3.inventory_page import InventoryPage
 from pages.tarea3.checkout_page import CheckoutPage
+import allure
 
-# Configuración del registrador de trazas (Logging) obligatorio
 logger = logging.getLogger(__name__)
 
 def cargar_casos_prueba():
-    """
-    Lee de manera segura el archivo JSON de datos respetando las mayúsculas
-    y minúsculas (Case-Sensitive) esenciales para entornos Linux en GitHub Actions.
-    """
-    ruta_json = os.path.join("data", "tarea3", "Data_cases.json")
-    if not os.path.exists(ruta_json):
-        logger.error(f"No se encontró el archivo de datos en la ruta: {ruta_json}")
-        raise FileNotFoundError(f"Archivo ausente: {ruta_json}")
-        
-    with open(ruta_json, "r", encoding="utf-8") as file:
-        datos = json.load(file)
-        if isinstance(datos, dict) and "usuarios_validos" in datos:
-            return datos["usuarios_validos"]
-        return datos
+    with open("data/tarea3/data_cases.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    return data["casos_agregar_producto"]
 
-try:
-    casos_prueba = cargar_casos_prueba()
-    ids_casos = [caso["caso"] for caso in casos_prueba]
-except Exception as e:
-    logger.critical(f"Fallo crítico al pre-cargar el archivo Data_cases.json: {str(e)}")
-    casos_prueba = []
-    ids_casos = []
+@pytest.fixture
+def driver():
+    # Llamada exacta a tu método estático
+    driver = WebDriverHelper.inicializar_driver() 
+    yield driver
+    logger.info("Cerrando la instancia del navegador mediante la fixture.")
+    driver.quit()
 
+@allure.title("Autenticacion y Compra de Producto")
+@allure.epic("E-commerce")
+@allure.feature("Autenticación")
+@allure.story("HU001-Autenticación exitosa y compra de producto")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.suite("Pruebas de Integración") 
+@pytest.mark.smoke 
+@pytest.mark.parametrize("data", cargar_casos_prueba())
 
-# DEFINICIÓN DE STEPS MEDIANTE DECORADORES (Cumple estrictamente los 5 requeridos)
+def test_suite1_autentificacion_y_compra(driver, data):
+    logger.info(f"=== INICIANDO CASO DE PRUEBA: {data['caso']} ===")
 
-@allure.step("Paso 1: Inicializar el navegador y navegar a SauceDemo")
-def step_abrir_pagina(login_page):
-    login_page.navegar_a_la_url()
-
-@allure.step("Paso 2: Autenticar en la plataforma con el usuario {username}")
-def step_autenticar_usuario(login_page, username, password):
-    login_page.autenticar(username, password)
-
-@allure.step("Paso 3: Ordenar catálogo de productos por el filtro: {orden}")
-def step_ordenar_productos(inventory_page, orden):
-    inventory_page.ordenar_productos_por_valor(orden)
-
-@allure.step("Paso 4: Agregar producto al carrito según índice e ir al Checkout")
-def step_agregar_y_proceder(inventory_page, checkout_page, indice):
-    inventory_page.agregar_al_carrito_por_indice(indice)
-    inventory_page.proceder_al_checkout()
-
-@allure.step("Paso 5: Validar la presencia del producto esperado: {producto_esperado}")
-def step_validar_producto(checkout_page, producto_esperado):
-    assert checkout_page.validar_producto_en_carrito(producto_esperado), f"Validación fallida: No se encontró '{producto_esperado}'"
-
-
-# SUITE DE PRUEBAS PRINCIPAL
-
-@pytest.mark.data
-@pytest.mark.parametrize("data", casos_prueba, ids=ids_casos)
-def test_suite_autenticacion_y_estado(driver, data):
-    """
-    Suite de prueba integrada con inyección Data-Driven. Ejecuta los pasos del flujo,
-    captura excepciones y empaqueta evidencias físicas en caso de error.
-    """
-    
-    os.makedirs("artifacts", exist_ok=True)
-    
-    login_page = LoginPage(driver)
-    inventory_page = InventoryPage(driver)
-    checkout_page = CheckoutPage(driver)
-    
     try:
-        logger.info(f"--- INICIANDO CASO INTEGRADOR: {data['caso']} ---")
-        
-        # Ejecución controlada y secuencial de los 5 pasos decorados
-        step_abrir_pagina(login_page)
-        step_autenticar_usuario(login_page, "standard_user", "secret_sauce")
-        step_ordenar_productos(inventory_page, data['orden'])
-        step_agregar_y_proceder(inventory_page, checkout_page, data['indice_producto'])
-        step_validar_producto(checkout_page, data['producto_esperado'])
-        
-        logger.info(f"--- CASO FINALIZADO CON ÉXITO: {data['caso']} ---")
-        
+        with allure.step("Inicio de pruebas"):
+            logger.info("Iniciando el flujo de autenticación y compra de producto.")
+            # Inicialización de clases POM
+            login_page = LoginPage(driver)
+            inventory_page = InventoryPage(driver)
+            checkout_page = CheckoutPage(driver)
+
+        # Paso 1: Navegar a la página
+        with allure.step("Navegando a la página de login"):
+            login_page.navegar_a_login("https://www.saucedemo.com/")
+
+        # Paso 2: Autentificarse con usuario estándar
+        with allure.step("Autenticándose con usuario estándar"):
+            login_page.autentificarse("standard_user", "secret_sauce")
+
+        # Paso 3: Validar que el login fue exitoso (URL contiene inventory)
+        with allure.step("Validar que el login fue exitoso (URL contiene inventory)"):
+            assert "inventory" in driver.current_url, "Error: El login no redirigió a la página de inventario."
+            logger.info("Login verificado con éxito vía URL.")
+
+        # Paso 4: Ordenar el filtro según el data-driven
+        with allure.step("Ordenando productos según el criterio definido en el caso de prueba"):
+            inventory_page.ordenar_productos_por_valor(data['orden'])
+            # Guardamos el nombre esperado que está en la posición/índice antes de hacer clic
+            nombre_real_tienda = inventory_page.obtener_nombre_producto_por_indice(data['indice_producto'])
+
+        # Paso 5: Agregar al carrito según los índices definidos
+        with allure.step("Agregando producto al carrito"):
+            inventory_page.agregar_al_carrito_por_indice(data['indice_producto'])
+
+        # Paso 6: Validar número de productos en carrito ("cantidad_esperada")
+        with allure.step("Validando cantidad de productos en carrito"):
+            cantidad_actual = inventory_page.obtener_cantidad_carrito()
+            assert cantidad_actual == data['cantidad_esperada'], "Error: La cantidad de productos difiere de la esperada."
+
+        # Ir a la sección del carrito
+        with allure.step("Navegando al carrito"):
+            inventory_page.ir_al_carrito()
+
+        # Paso 7: Validar que exista el elemento que coincida con "producto_esperado"
+        with allure.step("Validando producto en carrito"):
+            producto_en_carrito = checkout_page.validar_producto_en_carrito()
+            assert producto_en_carrito == data['producto_esperado'], f"Error: Se esperaba '{data['producto_esperado']}' pero se encontró '{producto_en_carrito}'."
+            logger.info("Validación de consistencia de producto en carrito completada.")
+
+        # Paso 8 y 9: Continuar flujo de checkout y rellenar formulario ficticio
+        with allure.step("Procediendo a checkout y llenando formulario"):
+            checkout_page.proceder_a_checkout()
+            checkout_page.llenar_formulario_y_continuar("Usuario", "Prueba", "LI-15011")
+
+        # Paso 10: Finalizar compra y validar éxito
+        with allure.step("Finalizando compra y validando éxito"):
+            checkout_page.finalizar_compra()
+            mensaje_final = checkout_page.obtener_mensaje_exito()
+            assert mensaje_final == "Thank you for your order!", "Error: No se visualizó la pantalla final de éxito."
+            logger.info(f"=== FINALIZADO CON ÉXITO: {data['caso']} ===")
+
     except Exception as e:
-        logger.error(f"Error detectado en el caso [{data['caso']}]: {str(e)}")
-        
-        
-        nombre_captura = f"fallo_{data['caso']}.png"
-        screenshot_path = os.path.join("artifacts", nombre_captura)
-        
-       
-        driver.save_screenshot(screenshot_path)
-        logger.info(f"Evidencia de pantalla resguardada en: {screenshot_path}")
-        
-        
-        allure.attach.file(
-            source=screenshot_path,
-            name=f"Evidencia_Error_{data['caso']}",
-            attachment_type=allure.attachment_type.PNG
-        )
-        
+        ruta_captura = guardar_captura(driver, f"fallo_{data['caso']}")
+
+        with allure.step("Capturando evidencia en allure"):
+            allure.attach.file(
+                ruta_captura,
+                name="Error identificado",
+                attachment_type=allure.attachment_type.PNG
+                )
+
+        logger.error(f"Prueba fallida. Captura guardada en: {ruta_captura}")
+        logger.error(e)
+
         raise e
