@@ -4,12 +4,10 @@ import os
 import logging
 import json
 
-# IMPORTACIONES POM DE LA TAREA 3
 from pages.tarea3.login_page import LoginPage
 from pages.tarea3.inventory_page import InventoryPage
 from pages.tarea3.checkout_page import CheckoutPage
 
-# HELPER DE CAPTURA (Este sí existe y se valida en tu estructura de la Tarea 3)
 from helpers.tarea3.webdriver_helper import WebDriverHelper
 
 # Requerimiento: Trazabilidad obligatoria con logging
@@ -31,9 +29,9 @@ def obtener_casos_integrador():
 casos_prueba = obtener_casos_integrador()
 ids_casos = [caso["caso"] for caso in casos_prueba] if casos_prueba else []
 
-# ==============================================================================
+
 # IMPLEMENTACIÓN DE 5 DECORADORES (@allure.step) PARA CADA PANTALLA TRABAJADA
-# ==============================================================================
+
 
 @allure.step("Paso 1 [Login Page]: Inicializar navegador y cargar SauceDemo")
 def step_abrir_aplicacion(login_page):
@@ -63,9 +61,9 @@ def step_validar_producto_en_carrito(checkout_page, producto_esperado):
     assert resultado_validacion, f"Error: No se encontró el producto esperado '{producto_esperado}' en el carrito."
     logger.info("Validación de consistencia completada con éxito.")
 
-# ==============================================================================
+
 # SUITE: AUTENTIFICACIÓN Y ALMACENAMIENTO DE ESTADO (DATA DRIVEN)
-# ==============================================================================
+
 
 @pytest.mark.data
 @pytest.mark.parametrize("data", casos_prueba, ids=ids_casos)
@@ -111,5 +109,5 @@ def test_suite_autenticacion_y_estado(driver, data):
                 attachment_type=allure.attachment_type.PNG
             )
         
-        # Requerimiento: Retornar/lanzar el error para la correcta trazabilidad del pipeline
+       
         raise e
