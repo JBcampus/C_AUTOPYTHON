@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "python.testing.pytestArgs": ["."],
-=======
-  "python.testing.pytestArgs": ["tests"],
->>>>>>> 2e3c6b826b8a33f8fa39cb4d9ac3c75da3573a8a
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true
 }

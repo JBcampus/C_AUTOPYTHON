@@ -48,10 +48,10 @@ def test_login_invalido_data_driven(driver, login_page, caso_login):
 
         with allure.step("Capturando evidencia en allure"):
             allure.attach(
-                driver.get_screenshot_as_png(),
-                name="Error identificado",
-                attachment_type=allure.attachment_type.PNG
-                )
+            driver.get_screenshot_as_png(),
+            name="Error identificado",
+            attachment_type=allure.attachment_type.PNG
+            )
 
         logger.error(f"Prueba fallida. Captura guardada en: {ruta_captura}")
         logger.error(e)

@@ -11,11 +11,12 @@ class LoginPage:
     LOGIN_BUTTON = (By.ID, "login-button") 
     ERROR_MESSAGE = (By.CSS_SELECTOR, "[data-test='error']")
 
-    @allure.step("Abrir página de login")
+
     def __init__(self, driver): 
         self.driver = driver 
         self.wait = WebDriverWait(driver, 10) 
- 
+
+    @allure.step("Abrir página de login") 
     def abrir(self): 
         self.driver.get(self.URL) 
  

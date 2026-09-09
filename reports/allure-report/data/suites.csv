@@ -1,5 +1,17 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","616","Autenticacion y Compra de Producto","tests.integrador","2026-09-08","failed","2026-09-08","","Pruebas de Integración","",""
-"","795","Autenticacion y Compra de Producto","tests.integrador","2026-09-08","passed","2026-09-08","","Pruebas de Integración","",""
-"","987","Autenticacion y Compra de Producto","tests.integrador","2026-09-08","passed","2026-09-08","","Pruebas de Integración","",""
-"","1059","Autenticacion y Compra de Producto","tests.integrador","2026-09-08","passed","2026-09-08","","Pruebas de Integración","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","704","Title: Autenticacion y Compra de Producto","tests.integrador","2026-09-09","passed","2026-09-09","","Test Suite: Login y Compra productos","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","916","Title: Autenticacion y Compra de Producto","tests.integrador","2026-09-09","passed","2026-09-09","","Test Suite: Login y Compra productos","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","990","Title: Autenticacion y Compra de Producto","tests.integrador","2026-09-09","failed","2026-09-09","","Test Suite: Login y Compra productos","",""
+"
+Suite Integradora: Implementa modularidad POM, Helpers, Logging,
+Manejo de Excepciones y paralelismo con 2 Workers distribuidos.
+","713","Title: Autenticacion y Compra de Producto","tests.integrador","2026-09-09","passed","2026-09-09","","Test Suite: Login y Compra productos","",""

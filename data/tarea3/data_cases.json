@@ -1,32 +1,30 @@
-{
-  "casos_agregar_producto": [
-    {
-      "caso": "orden_lohi_agregar_primer_producto",
-      "orden": "lohi",
-      "indice_producto": 0,
-      "producto_esperado": "Sauce Labs Onesie",
-      "cantidad_esperada": "1"
-    },
-    {
-      "caso": "orden_hilo_agregar_primer_producto",
-      "orden": "hilo",
-      "indice_producto": 0,
-      "producto_esperado": "Sauce Labs Fleece Jacket",
-      "cantidad_esperada": "1"
-    },
-    {
-      "caso": "orden_az_agregar_tercer_producto",
-      "orden": "az",
-      "indice_producto": 2,
-      "producto_esperado": "Sauce Labs Bolt T-Shirt",
-      "cantidad_esperada": "1"
-    },
-    {
-      "caso": "orden_za_agregar_segundo_producto",
-      "orden": "za",
-      "indice_producto": 1,
-      "producto_esperado": "Sauce Labs Onesie",
-      "cantidad_esperada": "1"
-    }
-  ]
-}
+[
+  {
+    "caso": "order_hilo_agregar_primer_producto",
+    "orden": "hilo",
+    "indice_producto": 0,
+    "producto_esperado": "Sauce Labs Fleece Jacket",
+    "cantidad_esperada": "1"
+  },
+  {
+    "caso": "order_lohi_agregar_primer_producto",
+    "orden": "lohi",
+    "indice_producto": 0,
+    "producto_esperado": "Sauce Labs Onesie",
+    "cantidad_esperada": "1"
+  },
+  {
+    "caso": "order_az_agregar_tercer_producto",
+    "orden": "az",
+    "indice_producto": 2,
+    "producto_esperado": "Sauce Labs Bolt T-Shirt",
+    "cantidad_esperada": "1"
+  },
+  {
+    "caso": "caso_forzar_error_integrador",
+    "orden": "za",
+    "indice_producto": 0,
+    "producto_esperado": "PRODUCTO_FANTASMA_ERROR",
+    "cantidad_esperada": "1"
+  }
+]
