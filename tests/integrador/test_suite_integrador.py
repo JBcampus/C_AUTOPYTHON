@@ -44,10 +44,10 @@ def test_suite_autenticacion_y_estado(driver, data):
     inventory_page = InventoryPage(driver)
     checkout_page = CheckoutPage(driver)
     
+    os.makedirs("artifacts", exist_ok=True)
+    
     try:
         logger.info(f"Iniciando caso integrador: {data['caso']}")
-        
-        # Ejecución de pasos controlados
         step_abrir_pagina(login_page)
         step_autenticar_usuario(login_page, "standard_user", "secret_sauce")
         step_ordenar_productos(inventory_page, data['orden'])
@@ -59,20 +59,18 @@ def test_suite_autenticacion_y_estado(driver, data):
     except Exception as e:
         logger.error(f"Error detectado en el caso {data['caso']}: {str(e)}")
         
-        # Asegurar creación de la carpeta artifacts (visible en tu árbol de directorios)
-        os.makedirs("artifacts", exist_ok=True)
-        screenshot_path = f"artifacts/error_{data['caso']}.png"
+        # Generar ruta de la captura dentro del directorio asegurado
+        screenshot_path = os.path.join("artifacts", f"error_{data['caso']}.png")
         
         # Captura física de la pantalla
         driver.save_screenshot(screenshot_path)
         logger.info(f"Captura de pantalla guardada en: {screenshot_path}")
         
-        # Adjunto obligatorio para el reporte Allure
+        # Adjunto obligatorio para Allure
         allure.attach.file(
             source=screenshot_path,
             name=f"Evidencia_Error_{data['caso']}",
             attachment_type=allure.attachment_type.PNG
         )
-        
-        # Lanzar de nuevo la excepción para que el test suite registre el fallo
         raise e
+
