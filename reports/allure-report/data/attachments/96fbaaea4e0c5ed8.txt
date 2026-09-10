@@ -1,4 +1,0 @@
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:34 Ejecutando caso inválido: login_usuario_vacio
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:37 Página de login abierta
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:40 Login ejecutado con usuario: 
-[32mINFO    [0m test_login_data_driven:test_login_data_driven.py:43 Mensaje de error obtenido: Epic sadface: Username is required
