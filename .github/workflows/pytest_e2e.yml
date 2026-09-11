@@ -25,7 +25,7 @@ jobs:
 
       - name: Run E2E tests with Allure, Coverage and 2 Workers
         run: |
-          python -m pytest tests/integrador/test_suite_integrador.py -n 2
+          python -m pytest tests/integrador/test_suite_integrador.py
 
       - name: Upload Allure raw results
         if: always()
