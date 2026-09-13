@@ -1,5 +1,5 @@
 import pytest 
- 
+
 @pytest.mark.regression 
 class TestSauceDemoConScopeClass: 
  

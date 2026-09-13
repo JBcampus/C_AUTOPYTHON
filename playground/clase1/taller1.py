@@ -5,12 +5,11 @@ attempts = 3
 is_valid = True 
  
 #Impresión de mensajes en terminal 
-print("Hola mundo "+ username) 
+print("Hola mundo "+ username ) 
 print(f"Ejecutando login con usuario: {username}") # f-strings 
  
 #Listas 
-users = ["standard_user", "locked_out_user", 
-"problem_user"] 
+users = ["standard_user", "locked_out_user", "problem_user","Usuario_4"] 
  
 print(users[0]) 
 print(users[1]) 
@@ -46,3 +45,4 @@ def build_user(username, password):
     } 
  
 user = build_user("standard_user", "secret_sauce") 
+print(user) 

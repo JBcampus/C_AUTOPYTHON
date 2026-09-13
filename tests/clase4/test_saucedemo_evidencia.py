@@ -36,6 +36,8 @@ def test_login_usuario_bloqueado_con_evidencia_si_falla(driver):
         mensaje_error = wait.until( 
             EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-test='error']")) 
         ) 
+
+        driver.save_screenshot(str(Path("artifacts/clase4")/"Prueba exitosa.png")) 
  
         assert "locked out" in mensaje_error.text 
  
@@ -51,8 +53,9 @@ def test_login_usuario_bloqueado_con_evidencia_si_falla(driver):
 
         # Captura de evidencia de fallo 
         driver.save_screenshot(str(ruta_evidencia)) 
+        print(driver.current_url)
         print(f"Evidencia guardada en: {ruta_evidencia}") 
-        raise 
+        raise
     
     finally: 
         print("Finalizó la prueba de login bloqueado")

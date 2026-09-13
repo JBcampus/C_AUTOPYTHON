@@ -2,7 +2,7 @@ name: E2E Pytest Selenium Allure
 
 on:
   push:
-    branches: ["alumno/mperez"]
+    branches: ["alumno/cramirezh"]
 
 jobs:
   e2e-tests:
