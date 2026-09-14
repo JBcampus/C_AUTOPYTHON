@@ -1,0 +1,6 @@
+[
+  {"user": "standard_user", "pass": "secret_sauce", "should_pass": true},
+  {"user": "problem_user", "pass": "secret_sauce", "should_pass": true},
+  {"user": "performance_glitch_user", "pass": "secret_sauce", "should_pass": true},
+  {"user": "error_user_test", "pass": "password_invalida", "should_pass": false}
+]
